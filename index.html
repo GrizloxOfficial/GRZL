@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>GRIZLOX (GRZL) - Global Crypto Ecosystem</title>
+<title>GRIZLOX (GRZL) Official</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -12,7 +12,7 @@ font-family:Arial, sans-serif;
 background:#05060a;
 color:white;
 overflow-x:hidden;
-line-height:1.6;
+line-height:1.7;
 }
 
 /* BACKGROUND */
@@ -22,12 +22,12 @@ width:100%;
 height:100%;
 background:linear-gradient(-45deg,#00ffd5,#7c3aed,#ff00aa,#00ff6a,#ffb800,#3b82f6);
 background-size:400% 400%;
-animation:bg 15s ease infinite;
-opacity:0.10;
+animation:bgmove 12s ease infinite;
+opacity:0.12;
 z-index:-1;
 }
 
-@keyframes bg{
+@keyframes bgmove{
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
@@ -36,20 +36,18 @@ z-index:-1;
 /* HERO */
 header{
 text-align:center;
-padding:140px 20px 100px;
+padding:120px 20px 70px;
 }
 
 .logo{
-font-size:160px;
+font-size:150px;
 font-weight:bold;
-letter-spacing:12px;
-
+letter-spacing:10px;
 background:linear-gradient(90deg,#00ffd5,#7c3aed,#ff00aa,#ffb800,#00ff6a,#3b82f6);
 background-size:400% 400%;
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
-
-animation:move 5s linear infinite,pulse 3s ease-in-out infinite;
+animation:move 4s linear infinite,pulse 2.5s ease-in-out infinite;
 }
 
 @keyframes move{
@@ -64,88 +62,100 @@ animation:move 5s linear infinite,pulse 3s ease-in-out infinite;
 100%{transform:scale(1);}
 }
 
-h1{
-font-size:60px;
-color:#00ffd5;
-margin-top:20px;
-}
-
-.subtitle{
-opacity:0.8;
-font-size:18px;
-max-width:800px;
-margin:0 auto;
-}
+h1{font-size:55px;color:#00ffd5;margin:0;}
+.subtitle{opacity:0.85;max-width:900px;margin:10px auto;}
 
 /* SECTIONS */
 section{
-max-width:1300px;
-margin:60px auto;
-padding:50px;
+max-width:1200px;
+margin:50px auto;
+padding:40px;
 background:rgba(255,255,255,0.05);
-border-radius:25px;
+border-radius:22px;
 border:1px solid rgba(255,255,255,0.1);
 backdrop-filter:blur(10px);
 }
 
 .title{
-font-size:42px;
-color:#00ffd5;
-margin-bottom:25px;
+font-size:38px;
 text-align:center;
+color:#00ffd5;
+margin-bottom:20px;
 }
 
 .text{
-font-size:18px;
-line-height:1.9;
-opacity:0.9;
 text-align:center;
-max-width:1000px;
-margin:0 auto;
+opacity:0.9;
+font-size:18px;
 }
 
-/* GRID */
+/* FEATURES */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:25px;
-margin-top:30px;
-}
-
-.card{
-padding:25px;
-background:rgba(255,255,255,0.06);
-border-radius:18px;
-border:1px solid rgba(255,255,255,0.1);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-/* LARGE HIGHLIGHT BOX */
-.highlight{
-padding:30px;
-font-size:20px;
-background:rgba(0,255,213,0.08);
-border-left:4px solid #00ffd5;
-border-radius:15px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
 margin-top:20px;
 }
 
-/* ROADMAP */
-.roadmap{
-text-align:left;
-max-width:900px;
-margin:0 auto;
-font-size:18px;
+.card{
+padding:20px;
+background:rgba(255,255,255,0.06);
+border-radius:15px;
+border:1px solid rgba(255,255,255,0.1);
+text-align:center;
+}
+
+/* CONTRACT */
+.contract{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+background:rgba(0,0,0,0.4);
+border-radius:12px;
+}
+
+button{
+background:#00ffd5;
+border:none;
+padding:10px 12px;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* SOCIAL BUTTONS (BRAND COLORS) */
+.social-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+
+.social{
+padding:15px;
+border-radius:14px;
+text-align:center;
+font-weight:bold;
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+/* BRAND COLORS */
+.youtube{background:#FF0000;}
+.telegram{background:#229ED9;}
+.twitter{background:#000000;}
+.whatsapp{background:#25D366;}
+.facebook{background:#1877F2;}
+
+.social:hover{
+transform:scale(1.05);
+opacity:0.9;
 }
 
 /* FOOTER */
 footer{
 text-align:center;
-padding:50px;
+padding:40px;
 opacity:0.7;
 }
 </style>
@@ -159,90 +169,67 @@ opacity:0.7;
 <div class="logo">GRZL</div>
 <h1>GRIZLOX (GRZL)</h1>
 <p class="subtitle">
-A Global Community Driven Crypto Ecosystem Built for Mass Adoption, Free Distribution, and Long-Term Growth
+A Community Driven Global Crypto Ecosystem Built for Fair Distribution and Long-Term Growth
 </p>
 </header>
 
 <!-- ABOUT -->
 <section>
-<div class="title">ABOUT GRIZLOX</div>
+<div class="title">ABOUT</div>
 <div class="text">
-GRIZLOX (GRZL) is a large-scale crypto ecosystem designed to bring people together through blockchain technology.  
-It is not just a token, but a global movement focused on community ownership, transparency, and future digital economy participation.
-</div>
-
-<div class="highlight">
-GRZL is built for one purpose: to empower global users through a fair, community-first crypto model.
-</div>
-</section>
-
-<!-- VISION -->
-<section>
-<div class="title">VISION</div>
-<div class="text">
-Our vision is to create one of the largest community-driven crypto ecosystems in the world where users are not just holders, but active participants in growth, governance, and expansion.
-</div>
-</section>
-
-<!-- FREE DISTRIBUTION -->
-<section>
-<div class="title">FREE TOKEN DISTRIBUTION PLAN</div>
-<div class="text">
-We will distribute 50,000,000 GRZL tokens for free to the global community.  
-The goal is to increase adoption, build trust, and allow everyone to become part of the ecosystem from the beginning.
-</div>
-
-<div class="highlight">
-Most tokens will be distributed freely to users worldwide, while a small portion may be used for operational growth.
+GRIZLOX (GRZL) is a global crypto ecosystem focused on community ownership, transparency, and decentralized growth.
 </div>
 </section>
 
 <!-- FEATURES -->
 <section>
-<div class="title">KEY FEATURES</div>
-
+<div class="title">FEATURES</div>
 <div class="grid">
-<div class="card">🔥 Community Owned Ecosystem</div>
-<div class="card">🌍 Global Crypto Adoption Plan</div>
-<div class="card">💎 Free Token Distribution System</div>
-<div class="card">⚡ Transparent Blockchain Structure</div>
-<div class="card">🚀 Long-Term Development Strategy</div>
-<div class="card">🔗 Future Utility Expansion</div>
+<div class="card">🔥 Community Driven</div>
+<div class="card">🌍 Global Vision</div>
+<div class="card">💎 Free Distribution</div>
+<div class="card">⚡ Blockchain Transparency</div>
 </div>
 </section>
 
-<!-- ROADMAP -->
+<!-- CONTRACT -->
 <section>
-<div class="title">ROADMAP</div>
-
-<div class="roadmap">
-Phase 1 → Project Launch & Smart Contract Deployment<br><br>
-Phase 2 → Community Growth & Global Awareness<br><br>
-Phase 3 → Free Token Distribution Campaign (50M GRZL)<br><br>
-Phase 4 → Exchange Listings & Market Expansion<br><br>
-Phase 5 → Global Ecosystem Scaling & Utility Integration
+<div class="title">CONTRACT</div>
+<div class="contract">
+<span id="c">0xa2ACF85713E58b3f2a343E6830995713b6aea6d4</span>
+<button onclick="copy()">Copy</button>
 </div>
 </section>
 
-<!-- COMMUNITY -->
+<!-- SOCIAL -->
 <section>
-<div class="title">COMMUNITY POWER</div>
-<div class="text">
-The strength of GRZL lies in its community. Every decision, every growth phase, and every expansion step is designed around community participation and global engagement.
-</div>
-</section>
+<div class="title">OFFICIAL SOCIAL LINKS</div>
 
-<!-- FUTURE -->
-<section>
-<div class="title">FUTURE VISION</div>
-<div class="text">
-GRZL aims to evolve into a full digital ecosystem where users can participate in governance, staking systems, rewards programs, and global crypto utility platforms.
+<div class="social-grid">
+
+<a class="social youtube" href="https://youtube.com/@grizloxofficial" target="_blank">YouTube</a>
+
+<a class="social telegram" href="https://t.me/GrizloxOfficial" target="_blank">Telegram</a>
+
+<a class="social twitter" href="https://x.com/Grizloxofficial" target="_blank">X (Twitter)</a>
+
+<a class="social whatsapp" href="https://whatsapp.com/channel/0029VbBvE8C8vd1LvNkxY41q" target="_blank">WhatsApp</a>
+
+<a class="social facebook" href="https://www.facebook.com/share/17ghakbgWW/" target="_blank">Facebook</a>
+
 </div>
 </section>
 
 <footer>
 © 2026 GRIZLOX (GRZL) — All Rights Reserved
 </footer>
+
+<script>
+function copy(){
+navigator.clipboard.writeText(document.getElementById("c").innerText);
+alert("Contract Copied!");
+}
+</script>
 
 </body>
 </html>

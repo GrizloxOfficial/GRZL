@@ -6,14 +6,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* 🌈 MULTI COLOR CRYPTO THEME */
 :root{
---c1:#00ffd5;   /* cyan */
---c2:#7c3aed;   /* purple */
---c3:#ff00aa;   /* pink */
---c4:#00ff6a;   /* green */
---c5:#ffb800;   /* gold */
---c6:#3b82f6;   /* blue */
+--c1:#00ffd5;
+--c2:#7c3aed;
+--c3:#ff00aa;
+--c4:#00ff6a;
+--c5:#ffb800;
+--c6:#3b82f6;
 }
 
 body{
@@ -24,19 +23,19 @@ overflow-x:hidden;
 background:#05060a;
 }
 
-/* ANIMATED BACKGROUND */
+/* BACKGROUND */
 .bg{
 position:fixed;
 width:100%;
 height:100%;
 background:linear-gradient(-45deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c6));
 background-size:400% 400%;
-animation:gradientMove 10s ease infinite;
+animation:move 10s ease infinite;
 opacity:0.15;
 z-index:-1;
 }
 
-@keyframes gradientMove{
+@keyframes move{
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
@@ -53,7 +52,6 @@ font-size:58px;
 background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c5));
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
-text-shadow:0 0 20px rgba(0,255,213,0.3);
 }
 
 .badge{
@@ -80,18 +78,8 @@ transition:0.3s;
 }
 
 .btn a:hover{
-transform:scale(1.1);
-box-shadow:0 0 20px var(--c1);
-}
-
-/* WALLET */
-.wallet{
-display:inline-block;
-margin-top:10px;
-padding:10px 15px;
-border-radius:12px;
-background:linear-gradient(90deg,var(--c2),var(--c3));
-cursor:pointer;
+transform:scale(1.05);
+box-shadow:0 0 15px var(--c1);
 }
 
 /* SECTIONS */
@@ -105,47 +93,22 @@ border-radius:18px;
 border:1px solid rgba(255,255,255,0.08);
 }
 
-/* TITLES */
-h2{
-color:var(--c1);
-}
-
-/* LIVE CARDS */
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:12px;
-}
-
-.card{
+/* CONTRACT */
+.contract-box{
+background:rgba(0,0,0,0.4);
+border:1px solid rgba(255,255,255,0.1);
 padding:15px;
 border-radius:14px;
-text-align:center;
-background:rgba(255,255,255,0.06);
-border:1px solid rgba(255,255,255,0.1);
-box-shadow:0 0 15px rgba(0,255,213,0.1);
 }
 
-/* TOKEN BARS */
-.bar{
-background:#111;
-height:10px;
-border-radius:5px;
-overflow:hidden;
-}
-.fill{
-height:10px;
-background:linear-gradient(90deg,var(--c1),var(--c4),var(--c5));
-}
-
-/* CONTRACT */
-.contract{
+.contract-row{
 display:flex;
 justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,0.05);
 padding:10px;
-background:rgba(0,0,0,0.4);
-border-radius:12px;
-border:1px solid rgba(255,255,255,0.1);
+border-radius:10px;
+margin-top:10px;
 }
 
 .copy{
@@ -170,13 +133,12 @@ border-radius:14px;
 text-align:center;
 color:white;
 background:rgba(255,255,255,0.06);
-border:1px solid rgba(255,255,255,0.1);
 transition:0.3s;
 }
 
 .social a:hover{
 transform:translateY(-5px);
-box-shadow:0 0 20px rgba(0,255,213,0.3);
+box-shadow:0 0 20px rgba(0,255,213,0.2);
 }
 
 /* FOOTER */
@@ -186,24 +148,6 @@ padding:20px;
 opacity:0.7;
 }
 
-/* MOBILE BAR */
-.bottom-bar{
-position:fixed;
-bottom:0;
-width:100%;
-display:flex;
-justify-content:space-around;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-padding:10px;
-border-top:1px solid rgba(255,255,255,0.1);
-}
-
-.bottom-bar a{
-color:var(--c1);
-text-decoration:none;
-font-size:14px;
-}
 </style>
 </head>
 
@@ -212,10 +156,8 @@ font-size:14px;
 <div class="bg"></div>
 
 <header>
-<h1>GRIZLOX <span class="badge">VERIFIED</span></h1>
-<p>Multi-Color Web3 Ecosystem on BNB Chain</p>
-
-<div class="wallet" onclick="connectWallet()">⚡ Connect Wallet</div>
+<h1>GRIZLOX <span class="badge">GRZL</span></h1>
+<p>Next-Generation Community Driven Web3 Ecosystem on Binance Smart Chain</p>
 
 <div class="btn">
 <a href="https://youtube.com/@grizloxofficial">YouTube</a>
@@ -225,48 +167,30 @@ font-size:14px;
 </header>
 
 <section>
-<h2>📊 Live Dashboard</h2>
-
-<div class="stats">
-<div class="card" id="price">Price</div>
-<div class="card" id="cap">Market Cap</div>
-<div class="card" id="holders">Holders</div>
-<div class="card" id="volume">Volume</div>
-</div>
-</section>
-
-<section>
-<h2>📖 About GRIZLOX</h2>
+<h2>📖 About GRIZLOX (GRZL)</h2>
 <p>
-GRIZLOX is a next-generation Web3 ecosystem built with community power, transparency and long-term vision.
-It combines meme culture + blockchain utility into one strong global movement.
+GRIZLOX (GRZL) is a next-generation community-driven crypto ecosystem built on Binance Smart Chain (BEP-20).
+It focuses on transparency, community ownership, and long-term Web3 growth.
 </p>
 </section>
 
+<!-- CONTRACT SECTION -->
 <section>
-<h2>📈 Tokenomics</h2>
+<h2>📄 Smart Contract Details</h2>
 
-<p>Community</p>
-<div class="bar"><div class="fill" style="width:45%"></div></div>
+<div class="contract-box">
 
-<p>Liquidity</p>
-<div class="bar"><div class="fill" style="width:25%"></div></div>
+<p><b>📅 Launch Date:</b> 01 June 2026</p>
 
-<p>Marketing</p>
-<div class="bar"><div class="fill" style="width:15%"></div></div>
+<p>
+GRIZLOX (GRZL) is a decentralized BEP-20 token designed for community-driven growth, transparency, and long-term ecosystem development. It merges meme culture with real blockchain utility and future Web3 expansion.
+</p>
 
-<p>Development</p>
-<div class="bar"><div class="fill" style="width:10%"></div></div>
-
-<p>Reserve</p>
-<div class="bar"><div class="fill" style="width:5%"></div></div>
-</section>
-
-<section>
-<h2>📄 Contract</h2>
-<div class="contract">
+<div class="contract-row">
 <span id="contract">0xa2ACF85713E58b3f2a343E6830995713b6aea6d4</span>
 <button class="copy" onclick="copy()">Copy</button>
+</div>
+
 </div>
 </section>
 
@@ -282,32 +206,14 @@ It combines meme culture + blockchain utility into one strong global movement.
 </section>
 
 <footer>
-© 2026 GRIZLOX Ecosystem
+© 2026 GRIZLOX (GRZL) Ecosystem
 </footer>
-
-<div class="bottom-bar">
-<a href="https://t.me/GrizloxOfficial">TG</a>
-<a href="https://youtube.com/@grizloxofficial">YT</a>
-<a href="https://x.com/Grizloxofficial">X</a>
-<a href="https://whatsapp.com/channel/0029VbBvE8C8vd1LvNkxY41q">WA</a>
-</div>
 
 <script>
 function copy(){
 navigator.clipboard.writeText(document.getElementById("contract").innerText);
-alert("Copied!");
+alert("Contract Copied!");
 }
-
-function connectWallet(){
-alert("Wallet feature coming soon 🚀");
-}
-
-setInterval(()=>{
-document.getElementById("price").innerText="Price: $"+(Math.random()*0.001).toFixed(6);
-document.getElementById("cap").innerText="Market Cap: $"+Math.floor(Math.random()*1000000);
-document.getElementById("holders").innerText="Holders: "+Math.floor(Math.random()*10000);
-document.getElementById("volume").innerText="Volume: "+Math.floor(Math.random()*500000);
-},2000);
 </script>
 
 </body>

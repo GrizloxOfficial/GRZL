@@ -1,44 +1,258 @@
-<div style="display:flex;justify-content:center;margin:20px 0;">
-
-<div class="glow-logo">
-GRZL
-</div>
-
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GRIZLOX (GRZL) - Web3 Ecosystem</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-.glow-logo{
-font-size:70px;
+:root{
+--c1:#00ffd5;
+--c2:#7c3aed;
+--c3:#ff00aa;
+--c4:#00ff6a;
+--c5:#ffb800;
+}
+
+body{
+margin:0;
+font-family:Arial;
+background:#05060a;
+color:white;
+overflow-x:hidden;
+}
+
+/* BACKGROUND */
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+background:linear-gradient(-45deg,var(--c1),var(--c2),var(--c3),var(--c4));
+background-size:400% 400%;
+animation:bgmove 10s ease infinite;
+opacity:0.15;
+z-index:-1;
+}
+
+@keyframes bgmove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* HERO */
+header{
+text-align:center;
+padding:70px 20px;
+}
+
+.logo{
+font-size:110px;
 font-weight:bold;
-letter-spacing:6px;
-color:#00ffd5;
-position:relative;
-animation:pulse 2s infinite ease-in-out;
-text-shadow:
-0 0 10px #00ffd5,
-0 0 20px #00ffd5,
-0 0 40px #00ffd5,
-0 0 80px #7c3aed;
+letter-spacing:10px;
+
+background:linear-gradient(90deg,#00ffd5,#7c3aed,#ff00aa,#ffb800,#00ff6a,#3b82f6);
+background-size:400% 400%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:move 4s linear infinite, pulse 2.5s ease-in-out infinite;
+
+text-shadow:0 0 20px #00ffd5,0 0 40px #7c3aed;
 }
 
-/* PULSE ANIMATION */
+@keyframes move{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
 @keyframes pulse{
-0%{
-transform:scale(1);
-text-shadow:0 0 10px #00ffd5,0 0 20px #00ffd5;
-opacity:0.8;
+0%{transform:scale(1);opacity:0.85;}
+50%{transform:scale(1.08);opacity:1;}
+100%{transform:scale(1);opacity:0.85;}
 }
 
-50%{
-transform:scale(1.1);
-text-shadow:0 0 20px #00ffd5,0 0 40px #7c3aed,0 0 80px #ff00aa;
-opacity:1;
+h1{
+font-size:42px;
+margin-top:10px;
+background:linear-gradient(90deg,#00ffd5,#7c3aed,#ff00aa,#ffb800);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-100%{
-transform:scale(1);
-text-shadow:0 0 10px #00ffd5,0 0 20px #00ffd5;
-opacity:0.8;
+.badge{
+background:linear-gradient(90deg,#ff00aa,#ffb800);
+color:black;
+padding:5px 10px;
+border-radius:20px;
+font-size:12px;
+margin-left:8px;
+font-weight:bold;
 }
+
+/* SECTIONS */
+section{
+max-width:1000px;
+margin:20px auto;
+padding:20px;
+background:rgba(255,255,255,0.05);
+border-radius:18px;
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+}
+
+h2{
+color:#00ffd5;
+}
+
+/* ARTICLE */
+.article{
+padding:15px;
+background:rgba(255,255,255,0.05);
+border-radius:14px;
+margin-top:10px;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.big-logo{
+font-size:55px;
+text-align:center;
+font-weight:bold;
+
+background:linear-gradient(90deg,#00ffd5,#7c3aed,#ff00aa,#ffb800,#00ff6a);
+background-size:400% 400%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+animation:move 4s linear infinite;
+margin-bottom:10px;
+}
+
+/* CONTRACT */
+.contract{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px;
+background:rgba(0,0,0,0.4);
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+button{
+background:#00ffd5;
+border:none;
+padding:8px 12px;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* SOCIAL */
+.social a{
+display:block;
+margin:8px 0;
+color:#00ffd5;
+text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+opacity:0.7;
 }
 </style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- HERO -->
+<header>
+<div class="logo">GRZL</div>
+<h1>GRIZLOX <span class="badge">GRZL</span></h1>
+<p>Next-Generation Community Driven Web3 Ecosystem on Binance Smart Chain</p>
+</header>
+
+<!-- ARTICLE 1 -->
+<section>
+<h2>💎 GRZL Vision</h2>
+<div class="article">
+<div class="big-logo">GRZL</div>
+<p>GRIZLOX (GRZL) is a decentralized ecosystem built for community-driven growth and long-term blockchain utility.</p>
+</div>
+</section>
+
+<!-- ARTICLE 2 -->
+<section>
+<h2>🔥 Why GRZL?</h2>
+<div class="article">
+<div class="big-logo">GRZL</div>
+<p>GRZL combines meme culture with real Web3 innovation and transparent blockchain technology.</p>
+</div>
+</section>
+
+<!-- ARTICLE 3 -->
+<section>
+<h2>⚡ Ecosystem</h2>
+<div class="article">
+<div class="big-logo">GRZL</div>
+<p>The GRZL ecosystem will expand into staking, governance, and DeFi utilities for global users.</p>
+</div>
+</section>
+
+<!-- ARTICLE 4 -->
+<section>
+<h2>📈 Roadmap</h2>
+<div class="article">
+<div class="big-logo">GRZL</div>
+<ul>
+<li>Smart Contract Launch</li>
+<li>Community Growth</li>
+<li>Staking System</li>
+<li>Exchange Listings</li>
+</ul>
+</div>
+</section>
+
+<!-- CONTRACT -->
+<section>
+<h2>📄 Contract Details</h2>
+<div class="article">
+<p><b>📅 Date:</b> 01 June 2026</p>
+<p>GRIZLOX (GRZL) is a BEP-20 token designed for decentralized community growth and Web3 expansion.</p>
+
+<div class="contract">
+<span id="contract">0xa2ACF85713E58b3f2a343E6830995713b6aea6d4</span>
+<button onclick="copy()">Copy</button>
+</div>
+</div>
+</section>
+
+<!-- SOCIAL -->
+<section>
+<h2>🌐 Social Links</h2>
+<div class="social">
+<a href="https://youtube.com/@grizloxofficial">YouTube</a>
+<a href="https://t.me/GrizloxOfficial">Telegram</a>
+<a href="https://x.com/Grizloxofficial">Twitter</a>
+<a href="https://whatsapp.com/channel/0029VbBvE8C8vd1LvNkxY41q">WhatsApp</a>
+<a href="https://www.facebook.com/share/17ghakbgWW/">Facebook</a>
+</div>
+</section>
+
+<footer>
+© 2026 GRIZLOX (GRZL) Ecosystem
+</footer>
+
+<script>
+function copy(){
+navigator.clipboard.writeText(document.getElementById("contract").innerText);
+alert("Contract Copied!");
+}
+</script>
+
+</body>
+</html>

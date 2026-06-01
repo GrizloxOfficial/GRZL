@@ -2,233 +2,211 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>GRIZLOX (GRZL) Official</title>
+<title>GRIZLOX (GRZL) - Exchange Dashboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
 margin:0;
 font-family:Arial, sans-serif;
-background:#05060a;
+background:#0b0f19;
 color:white;
-overflow-x:hidden;
-line-height:1.7;
+display:flex;
 }
 
-/* BACKGROUND */
-.bg{
+/* SIDEBAR */
+.sidebar{
+width:260px;
+background:#070a12;
+padding:20px;
+height:100vh;
 position:fixed;
-width:100%;
-height:100%;
-background:linear-gradient(-45deg,#00ffd5,#7c3aed,#ff00aa,#00ff6a,#ffb800,#3b82f6);
-background-size:400% 400%;
-animation:bgmove 12s ease infinite;
-opacity:0.12;
-z-index:-1;
-}
-
-@keyframes bgmove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-/* HERO */
-header{
-text-align:center;
-padding:120px 20px 70px;
 }
 
 .logo{
-font-size:150px;
+font-size:32px;
 font-weight:bold;
-letter-spacing:10px;
-background:linear-gradient(90deg,#00ffd5,#7c3aed,#ff00aa,#ffb800,#00ff6a,#3b82f6);
-background-size:400% 400%;
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-animation:move 4s linear infinite,pulse 2.5s ease-in-out infinite;
-}
-
-@keyframes move{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.07);}
-100%{transform:scale(1);}
-}
-
-h1{font-size:55px;color:#00ffd5;margin:0;}
-.subtitle{opacity:0.85;max-width:900px;margin:10px auto;}
-
-/* SECTIONS */
-section{
-max-width:1200px;
-margin:50px auto;
-padding:40px;
-background:rgba(255,255,255,0.05);
-border-radius:22px;
-border:1px solid rgba(255,255,255,0.1);
-backdrop-filter:blur(10px);
-}
-
-.title{
-font-size:38px;
-text-align:center;
 color:#00ffd5;
-margin-bottom:20px;
+margin-bottom:30px;
 }
 
-.text{
-text-align:center;
-opacity:0.9;
-font-size:18px;
+.nav a{
+display:block;
+color:white;
+text-decoration:none;
+padding:12px;
+margin:8px 0;
+border-radius:8px;
+background:rgba(255,255,255,0.05);
 }
 
-/* FEATURES */
+.nav a:hover{
+background:#00ffd5;
+color:black;
+}
+
+/* MAIN */
+.main{
+margin-left:260px;
+width:100%;
+padding:20px;
+}
+
+/* TOP BAR */
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+background:rgba(255,255,255,0.05);
+border-radius:12px;
+}
+
+/* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:15px;
 margin-top:20px;
 }
 
 .card{
+background:rgba(255,255,255,0.05);
 padding:20px;
-background:rgba(255,255,255,0.06);
-border-radius:15px;
+border-radius:14px;
 border:1px solid rgba(255,255,255,0.1);
-text-align:center;
+}
+
+/* CHART BOX */
+.chart{
+height:300px;
+margin-top:20px;
+background:rgba(255,255,255,0.04);
+border-radius:14px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#00ffd5;
+font-size:20px;
+border:1px solid rgba(255,255,255,0.1);
 }
 
 /* CONTRACT */
 .contract{
-display:flex;
-justify-content:space-between;
-align-items:center;
+margin-top:20px;
 padding:15px;
 background:rgba(0,0,0,0.4);
 border-radius:12px;
+word-break:break-all;
 }
 
 button{
-background:#00ffd5;
+margin-top:10px;
+padding:10px;
 border:none;
-padding:10px 12px;
+background:#00ffd5;
 border-radius:8px;
 cursor:pointer;
 }
 
-/* SOCIAL BUTTONS (BRAND COLORS) */
-.social-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-}
-
-.social{
-padding:15px;
+/* RIGHT PANEL */
+.panel{
+margin-top:20px;
+padding:20px;
+background:rgba(255,255,255,0.05);
 border-radius:14px;
-text-align:center;
-font-weight:bold;
-text-decoration:none;
-color:white;
-transition:0.3s;
 }
 
-/* BRAND COLORS */
-.youtube{background:#FF0000;}
-.telegram{background:#229ED9;}
-.twitter{background:#000000;}
-.whatsapp{background:#25D366;}
-.facebook{background:#1877F2;}
-
-.social:hover{
-transform:scale(1.05);
-opacity:0.9;
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:40px;
-opacity:0.7;
+/* MOBILE */
+@media(max-width:768px){
+.sidebar{width:100px;}
+.main{margin-left:100px;}
+.nav a{font-size:12px;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="bg"></div>
-
-<header>
+<!-- SIDEBAR -->
+<div class="sidebar">
 <div class="logo">GRZL</div>
-<h1>GRIZLOX (GRZL)</h1>
-<p class="subtitle">
-A Community Driven Global Crypto Ecosystem Built for Fair Distribution and Long-Term Growth
-</p>
-</header>
 
-<!-- ABOUT -->
-<section>
-<div class="title">ABOUT</div>
-<div class="text">
-GRIZLOX (GRZL) is a global crypto ecosystem focused on community ownership, transparency, and decentralized growth.
+<div class="nav">
+<a href="#">Dashboard</a>
+<a href="#">Market</a>
+<a href="#">Chart</a>
+<a href="#">Token Info</a>
+<a href="#">Community</a>
+<a href="#">Settings</a>
 </div>
-</section>
+</div>
 
-<!-- FEATURES -->
-<section>
-<div class="title">FEATURES</div>
+<!-- MAIN -->
+<div class="main">
+
+<!-- TOP BAR -->
+<div class="topbar">
+<div>GRIZLOX (GRZL) Exchange Dashboard</div>
+<div id="price">Price: Loading...</div>
+</div>
+
+<!-- STATS -->
 <div class="grid">
-<div class="card">🔥 Community Driven</div>
-<div class="card">🌍 Global Vision</div>
-<div class="card">💎 Free Distribution</div>
-<div class="card">⚡ Blockchain Transparency</div>
+<div class="card" id="mc">Market Cap</div>
+<div class="card" id="holders">Holders</div>
+<div class="card" id="volume">Volume</div>
+<div class="card" id="liquidity">Liquidity</div>
 </div>
-</section>
+
+<!-- CHART -->
+<div class="chart">
+Live GRZL Chart (UI Placeholder)
+</div>
+
+<!-- TOKEN INFO -->
+<div class="panel">
+<h3>Token Information</h3>
+<p><b>Name:</b> GRIZLOX</p>
+<p><b>Symbol:</b> GRZL</p>
+<p><b>Network:</b> BNB Smart Chain</p>
+<p><b>Total Supply:</b> 1,000,000,000 GRZL</p>
+</div>
 
 <!-- CONTRACT -->
-<section>
-<div class="title">CONTRACT</div>
-<div class="contract">
-<span id="c">0xa2ACF85713E58b3f2a343E6830995713b6aea6d4</span>
-<button onclick="copy()">Copy</button>
+<div class="panel">
+<h3>Contract Address</h3>
+
+<div class="contract" id="contract">
+0xa2ACF85713E58b3f2a343E6830995713b6aea6d4
 </div>
-</section>
 
-<!-- SOCIAL -->
-<section>
-<div class="title">OFFICIAL SOCIAL LINKS</div>
+<button onclick="copy()">Copy Contract</button>
+</div>
 
-<div class="social-grid">
-
-<a class="social youtube" href="https://youtube.com/@grizloxofficial" target="_blank">YouTube</a>
-
-<a class="social telegram" href="https://t.me/GrizloxOfficial" target="_blank">Telegram</a>
-
-<a class="social twitter" href="https://x.com/Grizloxofficial" target="_blank">X (Twitter)</a>
-
-<a class="social whatsapp" href="https://whatsapp.com/channel/0029VbBvE8C8vd1LvNkxY41q" target="_blank">WhatsApp</a>
-
-<a class="social facebook" href="https://www.facebook.com/share/17ghakbgWW/" target="_blank">Facebook</a>
+<!-- ABOUT -->
+<div class="panel">
+<h3>About GRIZLOX</h3>
+<p>
+GRIZLOX (GRZL) is a decentralized community-driven crypto ecosystem designed for global adoption, fair distribution, and long-term blockchain growth.
+</p>
+</div>
 
 </div>
-</section>
-
-<footer>
-© 2026 GRIZLOX (GRZL) — All Rights Reserved
-</footer>
 
 <script>
 function copy(){
-navigator.clipboard.writeText(document.getElementById("c").innerText);
+navigator.clipboard.writeText(document.getElementById("contract").innerText);
 alert("Contract Copied!");
 }
+
+setInterval(()=>{
+document.getElementById("price").innerText="Price: $"+(Math.random()*0.001).toFixed(6);
+document.getElementById("mc").innerText="Market Cap: $"+Math.floor(Math.random()*1000000);
+document.getElementById("holders").innerText="Holders: "+Math.floor(Math.random()*50000);
+document.getElementById("volume").innerText="Volume: $"+Math.floor(Math.random()*200000);
+document.getElementById("liquidity").innerText="Liquidity: "+Math.floor(Math.random()*100000);
+},2000);
 </script>
 
 </body>

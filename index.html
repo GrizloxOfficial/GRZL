@@ -2,212 +2,198 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>GRIZLOX (GRZL) - Exchange Dashboard</title>
+<title>GRIZLOX (GRZL) - Official Ecosystem</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
 margin:0;
 font-family:Arial, sans-serif;
-background:#0b0f19;
-color:white;
-display:flex;
+background:#070b14;
+color:#e5e7eb;
+line-height:1.8;
 }
 
-/* SIDEBAR */
-.sidebar{
-width:260px;
-background:#070a12;
-padding:20px;
-height:100vh;
-position:fixed;
+header{
+text-align:center;
+padding:100px 20px;
+background:linear-gradient(135deg,#0f172a,#05060a);
 }
 
 .logo{
-font-size:32px;
+font-size:90px;
 font-weight:bold;
 color:#00ffd5;
-margin-bottom:30px;
+letter-spacing:10px;
 }
 
-.nav a{
-display:block;
-color:white;
-text-decoration:none;
-padding:12px;
-margin:8px 0;
-border-radius:8px;
-background:rgba(255,255,255,0.05);
+.subtitle{
+max-width:900px;
+margin:0 auto;
+opacity:0.8;
 }
 
-.nav a:hover{
-background:#00ffd5;
-color:black;
+/* SECTIONS */
+section{
+max-width:1100px;
+margin:50px auto;
+padding:35px;
+background:#0f172a;
+border-radius:18px;
+border:1px solid rgba(255,255,255,0.08);
 }
 
-/* MAIN */
-.main{
-margin-left:260px;
-width:100%;
-padding:20px;
+h2{
+color:#00ffd5;
+margin-bottom:15px;
 }
 
-/* TOP BAR */
-.topbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px;
-background:rgba(255,255,255,0.05);
-border-radius:12px;
+p{
+opacity:0.9;
 }
 
 /* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:15px;
 margin-top:20px;
 }
 
 .card{
-background:rgba(255,255,255,0.05);
-padding:20px;
-border-radius:14px;
-border:1px solid rgba(255,255,255,0.1);
-}
-
-/* CHART BOX */
-.chart{
-height:300px;
-margin-top:20px;
-background:rgba(255,255,255,0.04);
-border-radius:14px;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#00ffd5;
-font-size:20px;
-border:1px solid rgba(255,255,255,0.1);
+padding:18px;
+background:#111827;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.06);
 }
 
 /* CONTRACT */
 .contract{
-margin-top:20px;
+background:#050814;
 padding:15px;
-background:rgba(0,0,0,0.4);
 border-radius:12px;
 word-break:break-all;
+color:#00ffd5;
 }
 
-button{
-margin-top:10px;
-padding:10px;
-border:none;
-background:#00ffd5;
-border-radius:8px;
-cursor:pointer;
-}
-
-/* RIGHT PANEL */
-.panel{
-margin-top:20px;
-padding:20px;
-background:rgba(255,255,255,0.05);
-border-radius:14px;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-.sidebar{width:100px;}
-.main{margin-left:100px;}
-.nav a{font-size:12px;}
+/* FOOTER */
+footer{
+text-align:center;
+padding:40px;
+opacity:0.6;
 }
 </style>
 </head>
 
 <body>
 
-<!-- SIDEBAR -->
-<div class="sidebar">
+<header>
 <div class="logo">GRZL</div>
+<h1>GRIZLOX (GRZL) ECOSYSTEM</h1>
+<p class="subtitle">
+A community-driven decentralized crypto project focused on transparency, global adoption, and long-term blockchain growth.
+</p>
+</header>
 
-<div class="nav">
-<a href="#">Dashboard</a>
-<a href="#">Market</a>
-<a href="#">Chart</a>
-<a href="#">Token Info</a>
-<a href="#">Community</a>
-<a href="#">Settings</a>
+<!-- ABOUT ARTICLE -->
+<section>
+<h2>About GRIZLOX</h2>
+<p>
+GRIZLOX (GRZL) is a next-generation decentralized crypto ecosystem built on Binance Smart Chain (BSC).
+The project is designed to empower global users through fair token distribution, community governance, and long-term sustainable growth.
+
+Unlike traditional crypto projects that focus only on trading, GRIZLOX is built as a long-term ecosystem where users become active participants in growth rather than passive investors.
+</p>
+
+<p>
+The mission of GRZL is simple: build a global crypto community that is transparent, accessible, and reward-driven.
+</p>
+</section>
+
+<!-- FUTURE VISION -->
+<section>
+<h2>Future Vision</h2>
+<p>
+The future of GRIZLOX is focused on building a full-scale decentralized ecosystem including staking systems, governance voting, NFT integrations, and cross-chain expansion.
+</p>
+
+<p>
+We aim to make GRZL a globally recognized digital asset that is not controlled by a single entity but powered entirely by its community.
+</p>
+</section>
+
+<!-- FREE DISTRIBUTION -->
+<section>
+<h2>Free Token Distribution Plan</h2>
+<p>
+GRIZLOX plans to distribute a large portion of its supply to early community members to ensure fair access and global participation.
+</p>
+
+<div class="card">
+✔ 50,000,000 GRZL planned for community rewards and free distribution campaigns
 </div>
-</div>
+</section>
 
-<!-- MAIN -->
-<div class="main">
+<!-- ROADMAP -->
+<section>
+<h2>Roadmap</h2>
 
-<!-- TOP BAR -->
-<div class="topbar">
-<div>GRIZLOX (GRZL) Exchange Dashboard</div>
-<div id="price">Price: Loading...</div>
-</div>
-
-<!-- STATS -->
 <div class="grid">
-<div class="card" id="mc">Market Cap</div>
-<div class="card" id="holders">Holders</div>
-<div class="card" id="volume">Volume</div>
-<div class="card" id="liquidity">Liquidity</div>
+<div class="card">Phase 1: Smart Contract Deployment</div>
+<div class="card">Phase 2: Community Growth</div>
+<div class="card">Phase 3: Free Distribution Campaign</div>
+<div class="card">Phase 4: Exchange Listings</div>
+<div class="card">Phase 5: Global Ecosystem Expansion</div>
+<div class="card">Phase 6: Staking & Governance Launch</div>
 </div>
+</section>
 
-<!-- CHART -->
-<div class="chart">
-Live GRZL Chart (UI Placeholder)
-</div>
+<!-- TOKEN DETAILS -->
+<section>
+<h2>Token Details</h2>
 
-<!-- TOKEN INFO -->
-<div class="panel">
-<h3>Token Information</h3>
-<p><b>Name:</b> GRIZLOX</p>
-<p><b>Symbol:</b> GRZL</p>
-<p><b>Network:</b> BNB Smart Chain</p>
-<p><b>Total Supply:</b> 1,000,000,000 GRZL</p>
+<div class="card">
+<b>Name:</b> GRIZLOX<br>
+<b>Symbol:</b> GRZL<br>
+<b>Network:</b> BNB Smart Chain (BEP-20)<br>
+<b>Total Supply:</b> 1,000,000,000 GRZL
 </div>
+</section>
 
 <!-- CONTRACT -->
-<div class="panel">
-<h3>Contract Address</h3>
+<section>
+<h2>Smart Contract</h2>
 
-<div class="contract" id="contract">
+<div class="contract">
 0xa2ACF85713E58b3f2a343E6830995713b6aea6d4
 </div>
+</section>
 
-<button onclick="copy()">Copy Contract</button>
+<!-- WHY GRZL -->
+<section>
+<h2>Why GRIZLOX?</h2>
+
+<div class="grid">
+<div class="card">✔ Transparent blockchain system</div>
+<div class="card">✔ Community-first approach</div>
+<div class="card">✔ Long-term sustainability model</div>
+<div class="card">✔ Fair token distribution</div>
+<div class="card">✔ Global adoption strategy</div>
+<div class="card">✔ Real ecosystem development plan</div>
 </div>
+</section>
 
-<!-- ABOUT -->
-<div class="panel">
-<h3>About GRIZLOX</h3>
+<!-- DISCLAIMER -->
+<section>
+<h2>Disclaimer</h2>
 <p>
-GRIZLOX (GRZL) is a decentralized community-driven crypto ecosystem designed for global adoption, fair distribution, and long-term blockchain growth.
+GRIZLOX (GRZL) is a community-driven crypto project. Cryptocurrency investments carry risk and users should always do their own research before participating.
 </p>
-</div>
+</section>
 
-</div>
-
-<script>
-function copy(){
-navigator.clipboard.writeText(document.getElementById("contract").innerText);
-alert("Contract Copied!");
-}
-
-setInterval(()=>{
-document.getElementById("price").innerText="Price: $"+(Math.random()*0.001).toFixed(6);
-document.getElementById("mc").innerText="Market Cap: $"+Math.floor(Math.random()*1000000);
-document.getElementById("holders").innerText="Holders: "+Math.floor(Math.random()*50000);
-document.getElementById("volume").innerText="Volume: $"+Math.floor(Math.random()*200000);
-document.getElementById("liquidity").innerText="Liquidity: "+Math.floor(Math.random()*100000);
-},2000);
-</script>
+<footer>
+© 2026 GRIZLOX (GRZL) — All Rights Reserved
+</footer>
 
 </body>
 </html>

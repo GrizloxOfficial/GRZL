@@ -2,71 +2,48 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>GRIZLOX (GRZL) Official Airdrop</title>
+<title>GRIZLOX (GRZL)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
 
 <style>
-:root{
---c1:#00ffd5;
---c2:#7c3aed;
---c3:#ff00aa;
---c4:#00ff6a;
---c5:#ffb800;
---c6:#3b82f6;
-}
-
 body{
 margin:0;
 font-family:Arial;
 background:#05060a;
 color:white;
+line-height:1.7;
+padding:20px;
 }
 
-.bg{
-position:fixed;
-width:100%;
-height:100%;
-background:linear-gradient(-45deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6));
-background-size:400% 400%;
-animation:bg 12s ease infinite;
-opacity:0.15;
-z-index:-1;
+.container{
+max-width:900px;
+margin:auto;
 }
 
-@keyframes bg{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-header{
+h1,h2{
+color:#00ffd5;
 text-align:center;
-padding:80px 20px;
-}
-
-.logo{
-font-size:90px;
-font-weight:bold;
-background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6));
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
 }
 
 section{
-max-width:1000px;
-margin:40px auto;
-padding:25px;
+margin:30px 0;
+padding:20px;
 background:rgba(255,255,255,0.05);
-border-radius:15px;
+border-radius:12px;
 }
 
-h2{
+a{
+color:#7c3aed;
+text-decoration:none;
+display:block;
 text-align:center;
-color:#ff00aa;
+margin:8px 0;
+font-weight:bold;
 }
 
+/* AIRDROP */
 button{
 padding:12px 20px;
 margin:10px;
@@ -90,53 +67,87 @@ word-break:break-all;
 
 <body>
 
-<div class="bg"></div>
+<div class="container">
 
-<header>
-<div class="logo">GRZL</div>
-<h1 style="text-align:center;">GRIZLOX OFFICIAL AIRDROP</h1>
-<p style="text-align:center;">BNB Smart Chain • MetaMask Required</p>
-</header>
+<h1>GRIZLOX (GRZL)</h1>
+
+<p style="text-align:center;">
+A Multi-Color Decentralized Crypto Ecosystem Built for Global Community Growth
+</p>
 
 <!-- AIRDROP -->
 <section>
-<h2>CLAIM YOUR 100 GRZL</h2>
+<h2>AIRDROP CLAIM</h2>
 
 <div style="text-align:center;">
-
 <button class="connect" onclick="connectWallet()">Connect MetaMask (BSC)</button>
 <br>
 <button class="claim" onclick="claimTokens()">Claim 100 GRZL</button>
 
 <p id="status">Wallet not connected</p>
-
 </div>
 </section>
 
-<!-- INFO -->
+<!-- ABOUT -->
 <section>
 <h2>ABOUT GRIZLOX</h2>
 <p style="text-align:center;">
-GRIZLOX (GRZL) is a BEP-20 token built on Binance Smart Chain with fair distribution and community-based airdrop system.
+GRIZLOX (GRZL) is a decentralized blockchain ecosystem designed for fair distribution and transparency.
 </p>
+</section>
+
+<!-- FUTURE -->
+<section>
+<h2>FUTURE VISION</h2>
+<p style="text-align:center;">
+GRIZLOX aims to expand into staking, governance, NFT integration and cross-chain ecosystem.
+</p>
+</section>
+
+<!-- ROADMAP -->
+<section>
+<h2>ROADMAP</h2>
+<p style="text-align:center;">Phase 1: Launch</p>
+<p style="text-align:center;">Phase 2: Community Growth</p>
+<p style="text-align:center;">Phase 3: Free Distribution</p>
+<p style="text-align:center;">Phase 4: Listings</p>
+<p style="text-align:center;">Phase 5: Global Expansion</p>
 </section>
 
 <!-- CONTRACT -->
 <section>
-<h2>TOKEN CONTRACT</h2>
+<h2>SMART CONTRACT</h2>
 <p style="text-align:center;color:#00ffd5;word-break:break-all;">
-0xbb04ea0b5b1a6E9e3bBe2B80B7CffA27c69a35F7
+0xa2ACF85713E58b3f2a343E6830995713b6aea6d4
 </p>
 </section>
+
+<!-- OFFICIAL LINKS (FIXED) -->
+<section>
+<h2>OFFICIAL SOCIAL LINKS</h2>
+
+<a href="https://youtube.com/@grizloxofficial" target="_blank">YouTube</a>
+
+<a href="https://x.com/Grizloxofficial" target="_blank">X (Twitter)</a>
+
+<a href="https://www.facebook.com/share/18o78dS9ks/" target="_blank">Facebook</a>
+
+<a href="https://t.me/GrizloxOfficial" target="_blank">Telegram</a>
+
+<a href="https://whatsapp.com/channel/0029Vb7hBP1IN9inZjGs490g" target="_blank">WhatsApp Channel</a>
+
+<a href="mailto:grizloxofficial@gmail.com">Email: grizloxofficial@gmail.com</a>
+
+</section>
+
+</div>
 
 <script>
 let provider;
 let signer;
 
-// 🔴 Airdrop Smart Contract (IMPORTANT)
-const contractAddress = "0xbb04ea0b5b1a6E9e3bBe2B80B7CffA27c69a35F7";
+const contractAddress = "0xa2ACF85713E58b3f2a343E6830995713b6aea6d4";
 
-// ABI (must match smart contract)
 const abi = [
   "function claim() public"
 ];
@@ -149,26 +160,25 @@ async function connectWallet(){
 
   provider = new ethers.providers.Web3Provider(window.ethereum);
 
-  // BSC network request
   try{
     await ethereum.request({
       method: "wallet_switchEthereumChain",
-      params: [{ chainId: "0x38" }] // BSC Mainnet
+      params: [{ chainId: "0x38" }]
     });
   }catch(e){}
 
   await provider.send("eth_requestAccounts", []);
   signer = provider.getSigner();
 
-  let address = await signer.getAddress();
+  let addr = await signer.getAddress();
 
   document.getElementById("status").innerText =
-    "Connected (BSC): " + address;
+    "Connected (BSC): " + addr;
 }
 
 async function claimTokens(){
   if(!signer){
-    alert("MetaMask connect کریں");
+    alert("Connect MetaMask first");
     return;
   }
 
@@ -181,11 +191,11 @@ async function claimTokens(){
     await tx.wait();
 
     document.getElementById("status").innerText =
-      "✅ 100 GRZL successfully claimed!";
+      "✅ 100 GRZL Claimed Successfully!";
   }catch(err){
     console.log(err);
     document.getElementById("status").innerText =
-      "❌ Claim failed (check contract / BSC network)";
+      "❌ Claim failed";
   }
 }
 </script>

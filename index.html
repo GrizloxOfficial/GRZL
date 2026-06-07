@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>GRIZLOX (GRZL) - Multi Color Ecosystem</title>
+<title>GRIZLOX (GRZL) Official Airdrop</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
@@ -19,11 +19,9 @@
 
 body{
 margin:0;
-font-family:Arial, sans-serif;
+font-family:Arial;
 background:#05060a;
 color:white;
-line-height:1.8;
-overflow-x:hidden;
 }
 
 .bg{
@@ -45,24 +43,23 @@ z-index:-1;
 
 header{
 text-align:center;
-padding:100px 20px;
+padding:80px 20px;
 }
 
 .logo{
-font-size:110px;
+font-size:90px;
 font-weight:bold;
-letter-spacing:12px;
 background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6));
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 section{
-max-width:1100px;
-margin:50px auto;
-padding:35px;
+max-width:1000px;
+margin:40px auto;
+padding:25px;
 background:rgba(255,255,255,0.05);
-border-radius:18px;
+border-radius:15px;
 }
 
 h2{
@@ -70,7 +67,6 @@ text-align:center;
 color:#ff00aa;
 }
 
-/* AIRDROP BUTTONS */
 button{
 padding:12px 20px;
 margin:10px;
@@ -80,25 +76,14 @@ cursor:pointer;
 font-weight:bold;
 }
 
-.connect{
-background:#00ffd5;
-}
-
-.claim{
-background:#7c3aed;
-color:white;
-}
+.connect{background:#00ffd5;}
+.claim{background:#7c3aed;color:white;}
 
 #status{
 text-align:center;
 color:#00ffd5;
 margin-top:10px;
-}
-
-/* LINKS */
-a{
-color:white;
-text-decoration:none;
+word-break:break-all;
 }
 </style>
 </head>
@@ -109,17 +94,17 @@ text-decoration:none;
 
 <header>
 <div class="logo">GRZL</div>
-<h1 style="text-align:center;">GRIZLOX (GRZL)</h1>
-<p style="text-align:center;">Multi Color Decentralized Ecosystem</p>
+<h1 style="text-align:center;">GRIZLOX OFFICIAL AIRDROP</h1>
+<p style="text-align:center;">BNB Smart Chain • MetaMask Required</p>
 </header>
 
-<!-- AIRDROP SECTION (ADDED) -->
+<!-- AIRDROP -->
 <section>
-<h2>AIRDROP CLAIM</h2>
+<h2>CLAIM YOUR 100 GRZL</h2>
 
 <div style="text-align:center;">
 
-<button class="connect" onclick="connectWallet()">Connect MetaMask</button>
+<button class="connect" onclick="connectWallet()">Connect MetaMask (BSC)</button>
 <br>
 <button class="claim" onclick="claimTokens()">Claim 100 GRZL</button>
 
@@ -128,27 +113,19 @@ text-decoration:none;
 </div>
 </section>
 
-<!-- ABOUT -->
+<!-- INFO -->
 <section>
 <h2>ABOUT GRIZLOX</h2>
 <p style="text-align:center;">
-GRIZLOX (GRZL) is a decentralized blockchain ecosystem designed for fair distribution and community growth.
+GRIZLOX (GRZL) is a BEP-20 token built on Binance Smart Chain with fair distribution and community-based airdrop system.
 </p>
 </section>
 
 <!-- CONTRACT -->
 <section>
-<h2>CONTRACT ADDRESS</h2>
-<p style="text-align:center;word-break:break-all;color:#00ffd5;">
+<h2>TOKEN CONTRACT</h2>
+<p style="text-align:center;color:#00ffd5;word-break:break-all;">
 0xbb04ea0b5b1a6E9e3bBe2B80B7CffA27c69a35F7
-</p>
-</section>
-
-<!-- SOCIAL -->
-<section>
-<h2>OFFICIAL LINKS</h2>
-<p style="text-align:center;">
-YouTube | Telegram | X | WhatsApp
 </p>
 </section>
 
@@ -156,33 +133,42 @@ YouTube | Telegram | X | WhatsApp
 let provider;
 let signer;
 
-// 🔴 YOUR AIRDROP CONTRACT
+// 🔴 Airdrop Smart Contract (IMPORTANT)
 const contractAddress = "0xbb04ea0b5b1a6E9e3bBe2B80B7CffA27c69a35F7";
 
-// 🔴 MUST MATCH YOUR SMART CONTRACT
+// ABI (must match smart contract)
 const abi = [
   "function claim() public"
 ];
 
 async function connectWallet(){
   if(!window.ethereum){
-    alert("Install MetaMask");
+    alert("MetaMask install کریں");
     return;
   }
 
   provider = new ethers.providers.Web3Provider(window.ethereum);
+
+  // BSC network request
+  try{
+    await ethereum.request({
+      method: "wallet_switchEthereumChain",
+      params: [{ chainId: "0x38" }] // BSC Mainnet
+    });
+  }catch(e){}
+
   await provider.send("eth_requestAccounts", []);
   signer = provider.getSigner();
 
-  let addr = await signer.getAddress();
+  let address = await signer.getAddress();
 
   document.getElementById("status").innerText =
-    "Connected: " + addr;
+    "Connected (BSC): " + address;
 }
 
 async function claimTokens(){
   if(!signer){
-    alert("Connect wallet first");
+    alert("MetaMask connect کریں");
     return;
   }
 
@@ -195,11 +181,11 @@ async function claimTokens(){
     await tx.wait();
 
     document.getElementById("status").innerText =
-      "✅ 100 GRZL Claimed Successfully!";
-  }catch(e){
-    console.log(e);
+      "✅ 100 GRZL successfully claimed!";
+  }catch(err){
+    console.log(err);
     document.getElementById("status").innerText =
-      "❌ Claim failed";
+      "❌ Claim failed (check contract / BSC network)";
   }
 }
 </script>

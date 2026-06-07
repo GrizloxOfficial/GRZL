@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>GRIZLOX (GRZL) - Multi Color Ecosystem</title>
+<title>GRIZLOX (GRZL) - Airdrop</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
 
 <style>
 :root{
@@ -20,11 +22,9 @@ margin:0;
 font-family:Arial, sans-serif;
 background:#05060a;
 color:white;
-line-height:1.8;
 overflow-x:hidden;
 }
 
-/* MULTI COLOR ANIMATED BG */
 .bg{
 position:fixed;
 width:100%;
@@ -42,123 +42,61 @@ z-index:-1;
 100%{background-position:0% 50%;}
 }
 
-/* HERO */
 header{
 text-align:center;
-padding:100px 20px;
+padding:80px 20px;
 }
 
 .logo{
-font-size:110px;
+font-size:100px;
 font-weight:bold;
-letter-spacing:12px;
 background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6));
-background-size:400% 400%;
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
-animation:move 4s linear infinite;
 }
 
-@keyframes move{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-h1{
-text-align:center;
-color:var(--c1);
-}
-
-.subtitle{
-text-align:center;
-opacity:0.85;
-max-width:900px;
-margin:auto;
-}
-
-/* SECTIONS */
 section{
-max-width:1100px;
-margin:50px auto;
-padding:35px;
+max-width:1000px;
+margin:40px auto;
+padding:30px;
 background:rgba(255,255,255,0.05);
-border-radius:18px;
-border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
+border-radius:15px;
 }
 
-/* TITLES */
 h2{
+text-align:center;
 color:var(--c3);
-text-align:center;
 }
 
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
-margin-top:20px;
-}
-
-.card{
-padding:18px;
-background:rgba(255,255,255,0.06);
-border-radius:12px;
-border:1px solid rgba(255,255,255,0.1);
-transition:0.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-border-color:var(--c1);
-}
-
-/* CONTRACT */
-.contract{
-background:rgba(0,0,0,0.4);
-padding:15px;
-border-radius:12px;
-word-break:break-all;
-color:var(--c1);
-text-align:center;
-}
-
-/* LINKS */
-.linkbox{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-}
-
-.link{
-padding:15px;
-text-align:center;
-border-radius:12px;
+/* AIRDROP BUTTONS */
+button{
+padding:12px 20px;
+margin:10px;
+border:none;
+border-radius:10px;
+cursor:pointer;
 font-weight:bold;
-text-decoration:none;
+}
+
+.connect{
+background:#00ffd5;
+}
+
+.claim{
+background:#7c3aed;
 color:white;
-transition:0.3s;
 }
 
-/* BRAND COLORS */
-.youtube{background:#FF0000;}
-.telegram{background:#229ED9;}
-.twitter{background:#000000;}
-.whatsapp{background:#25D366;}
-.facebook{background:#1877F2;}
-
-.link:hover{
-transform:scale(1.05);
-opacity:0.9;
-}
-
-/* FOOTER */
-footer{
+#status{
 text-align:center;
-padding:40px;
-opacity:0.6;
+margin-top:10px;
+color:#00ffd5;
+}
+
+/* SOCIAL */
+a{
+color:white;
+text-decoration:none;
 }
 </style>
 </head>
@@ -169,70 +107,102 @@ opacity:0.6;
 
 <header>
 <div class="logo">GRZL</div>
-<h1>GRIZLOX (GRZL)</h1>
-<p class="subtitle">
-A Multi-Color Decentralized Crypto Ecosystem Built for Global Community Growth, Fair Distribution and Blockchain Innovation
-</p>
+<h1 style="text-align:center;">GRIZLOX AIRDROP</h1>
+<p style="text-align:center;">Claim 100 Free GRZL Tokens</p>
 </header>
 
-<!-- ABOUT -->
+<!-- AIRDROP SECTION -->
 <section>
-<h2>ABOUT GRIZLOX</h2>
-<p>
-GRIZLOX (GRZL) is a decentralized blockchain ecosystem designed to empower global users through fair token distribution, transparency and long-term growth.
-</p>
-</section>
+<h2>AIRDROP CLAIM</h2>
 
-<!-- FUTURE -->
-<section>
-<h2>FUTURE VISION</h2>
-<p>
-GRIZLOX aims to become a global Web3 ecosystem including staking, governance, NFT integration and cross-chain expansion.
-</p>
-</section>
+<div style="text-align:center;">
 
-<!-- ROADMAP -->
-<section>
-<h2>ROADMAP</h2>
-<div class="grid">
-<div class="card">Phase 1: Launch</div>
-<div class="card">Phase 2: Community Growth</div>
-<div class="card">Phase 3: Free Distribution</div>
-<div class="card">Phase 4: Listings</div>
-<div class="card">Phase 5: Global Expansion</div>
+<button class="connect" onclick="connectWallet()">Connect MetaMask</button>
+
+<br>
+
+<button class="claim" onclick="claimTokens()">Claim 100 GRZL</button>
+
+<p id="status">Wallet not connected</p>
+
 </div>
+</section>
+
+<!-- INFO -->
+<section>
+<h2>ABOUT</h2>
+<p style="text-align:center;">
+GRIZLOX (GRZL) is a decentralized ecosystem built for fair distribution and community growth.
+</p>
 </section>
 
 <!-- CONTRACT -->
 <section>
-<h2>SMART CONTRACT</h2>
-<div class="contract">
+<h2>CONTRACT ADDRESS</h2>
+<p style="text-align:center;color:#00ffd5;word-break:break-all;">
 0xa2ACF85713E58b3f2a343E6830995713b6aea6d4
-</div>
+</p>
 </section>
 
-<!-- SOCIAL LINKS -->
+<!-- SOCIAL -->
 <section>
-<h2>OFFICIAL SOCIAL LINKS</h2>
-
-<div class="linkbox">
-
-<a class="link youtube" href="https://youtube.com/@grizloxofficial" target="_blank">YouTube</a>
-
-<a class="link telegram" href="https://t.me/GrizloxOfficial" target="_blank">Telegram</a>
-
-<a class="link twitter" href="https://x.com/Grizloxofficial" target="_blank">X (Twitter)</a>
-
-<a class="link whatsapp" href="https://whatsapp.com/channel/0029VbBvE8C8vd1LvNkxY41q" target="_blank">WhatsApp</a>
-
-<a class="link facebook" href="https://www.facebook.com/share/17ghakbgWW/" target="_blank">Facebook</a>
-
-</div>
+<h2>SOCIAL LINKS</h2>
+<p style="text-align:center;">
+<a href="https://youtube.com/@grizloxofficial">YouTube</a> |
+<a href="https://t.me/GrizloxOfficial">Telegram</a> |
+<a href="https://x.com/Grizloxofficial">X</a>
+</p>
 </section>
 
-<footer>
-© 2026 GRIZLOX (GRZL) — Multi Color Ecosystem
-</footer>
+<script>
+let provider;
+let signer;
+
+const tokenAddress = "0xa2ACF85713E58b3f2a343E6830995713b6aea6d4";
+
+const abi = [
+  "function claim() public"
+];
+
+async function connectWallet() {
+  if (!window.ethereum) {
+    alert("Install MetaMask first");
+    return;
+  }
+
+  provider = new ethers.providers.Web3Provider(window.ethereum);
+  await provider.send("eth_requestAccounts", []);
+  signer = provider.getSigner();
+
+  let addr = await signer.getAddress();
+
+  document.getElementById("status").innerText =
+    "Connected: " + addr;
+}
+
+async function claimTokens() {
+  if (!signer) {
+    alert("Connect wallet first");
+    return;
+  }
+
+  const contract = new ethers.Contract(tokenAddress, abi, signer);
+
+  try {
+    document.getElementById("status").innerText = "Claiming...";
+
+    const tx = await contract.claim();
+    await tx.wait();
+
+    document.getElementById("status").innerText =
+      "✅ 100 GRZL Claimed Successfully!";
+  } catch (e) {
+    console.log(e);
+    document.getElementById("status").innerText =
+      "❌ Claim failed (check contract)";
+  }
+}
+</script>
 
 </body>
 </html>

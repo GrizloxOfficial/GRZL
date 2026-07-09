@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>GRIZLOX (GRZL)</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:#05060a;
 color:white;
 line-height:1.7;
@@ -20,6 +19,13 @@ padding:20px;
 .container{
 max-width:900px;
 margin:auto;
+}
+
+.logo{
+display:block;
+margin:20px auto;
+width:180px;
+height:auto;
 }
 
 h1,h2{
@@ -43,25 +49,10 @@ margin:8px 0;
 font-weight:bold;
 }
 
-/* AIRDROP */
-button{
-padding:12px 20px;
-margin:10px;
-border:none;
-border-radius:10px;
-cursor:pointer;
-font-weight:bold;
-}
-
-.connect{background:#00ffd5;}
-.claim{background:#7c3aed;color:white;}
-
-#status{
+p{
 text-align:center;
-color:#00ffd5;
-margin-top:10px;
-word-break:break-all;
 }
+
 </style>
 </head>
 
@@ -69,136 +60,87 @@ word-break:break-all;
 
 <div class="container">
 
+<img src="logo.png" class="logo" alt="GRIZLOX Logo">
+
 <h1>GRIZLOX (GRZL)</h1>
 
-<p style="text-align:center;">
+<p>
 A Multi-Color Decentralized Crypto Ecosystem Built for Global Community Growth
 </p>
 
-<!-- AIRDROP -->
-<section>
-<h2>AIRDROP CLAIM</h2>
 
-<div style="text-align:center;">
-<button class="connect" onclick="connectWallet()">Connect MetaMask (BSC)</button>
-<br>
-<button class="claim" onclick="claimTokens()">Claim 100 GRZL</button>
-
-<p id="status">Wallet not connected</p>
-</div>
-</section>
-
-<!-- ABOUT -->
 <section>
 <h2>ABOUT GRIZLOX</h2>
-<p style="text-align:center;">
-GRIZLOX (GRZL) is a decentralized blockchain ecosystem designed for fair distribution and transparency.
+
+<p>
+GRIZLOX (GRZL) is a decentralized blockchain ecosystem designed for fair distribution, transparency and global community growth.
 </p>
+
 </section>
 
-<!-- FUTURE -->
+
 <section>
 <h2>FUTURE VISION</h2>
-<p style="text-align:center;">
-GRIZLOX aims to expand into staking, governance, NFT integration and cross-chain ecosystem.
+
+<p>
+GRIZLOX aims to expand into staking, governance, NFT integration and cross-chain ecosystem development.
 </p>
+
 </section>
 
-<!-- ROADMAP -->
+
 <section>
 <h2>ROADMAP</h2>
-<p style="text-align:center;">Phase 1: Launch</p>
-<p style="text-align:center;">Phase 2: Community Growth</p>
-<p style="text-align:center;">Phase 3: Free Distribution</p>
-<p style="text-align:center;">Phase 4: Listings</p>
-<p style="text-align:center;">Phase 5: Global Expansion</p>
+
+<p>Phase 1: Launch</p>
+<p>Phase 2: Community Growth</p>
+<p>Phase 3: Community Development</p>
+<p>Phase 4: Listings</p>
+<p>Phase 5: Global Expansion</p>
+
 </section>
 
-<!-- CONTRACT -->
+
 <section>
 <h2>SMART CONTRACT</h2>
-<p style="text-align:center;color:#00ffd5;word-break:break-all;">
+
+<p style="color:#00ffd5;word-break:break-all;">
 0xa2ACF85713E58b3f2a343E6830995713b6aea6d4
 </p>
-</section>
 
-<!-- OFFICIAL LINKS (FIXED) -->
+</section>
 <section>
 <h2>OFFICIAL SOCIAL LINKS</h2>
 
-<a href="https://youtube.com/@grizloxofficial" target="_blank">YouTube</a>
+<a href="https://youtube.com/@grizloxofficial" target="_blank">
+YouTube
+</a>
 
-<a href="https://x.com/Grizloxofficial" target="_blank">X (Twitter)</a>
+<a href="https://x.com/Grizloxofficial" target="_blank">
+X (Twitter)
+</a>
 
-<a href="https://www.facebook.com/share/18o78dS9ks/" target="_blank">Facebook</a>
+<a href="https://www.facebook.com/share/18o78dS9ks/" target="_blank">
+Facebook
+</a>
 
-<a href="https://t.me/GrizloxOfficial" target="_blank">Telegram</a>
+<a href="https://t.me/GrizloxOfficial" target="_blank">
+Telegram
+</a>
 
-<a href="https://whatsapp.com/channel/0029Vb7hBP1IN9inZjGs490g" target="_blank">WhatsApp Channel</a>
+<a href="https://whatsapp.com/channel/0029VbBvE8C8vd1LvNkxY41q" target="_blank">
+WhatsApp Channel
+</a>
 
-<a href="mailto:grizloxofficial@gmail.com">Email: grizloxofficial@gmail.com</a>
+<a href="mailto:grizloxofficial@gmail.com">
+Email: grizloxofficial@gmail.com
+</a>
 
 </section>
 
+
 </div>
-
-<script>
-let provider;
-let signer;
-
-const contractAddress = "0xa2ACF85713E58b3f2a343E6830995713b6aea6d4";
-
-const abi = [
-  "function claim() public"
-];
-
-async function connectWallet(){
-  if(!window.ethereum){
-    alert("MetaMask install کریں");
-    return;
-  }
-
-  provider = new ethers.providers.Web3Provider(window.ethereum);
-
-  try{
-    await ethereum.request({
-      method: "wallet_switchEthereumChain",
-      params: [{ chainId: "0x38" }]
-    });
-  }catch(e){}
-
-  await provider.send("eth_requestAccounts", []);
-  signer = provider.getSigner();
-
-  let addr = await signer.getAddress();
-
-  document.getElementById("status").innerText =
-    "Connected (BSC): " + addr;
-}
-
-async function claimTokens(){
-  if(!signer){
-    alert("Connect MetaMask first");
-    return;
-  }
-
-  const contract = new ethers.Contract(contractAddress, abi, signer);
-
-  try{
-    document.getElementById("status").innerText = "Processing claim...";
-
-    let tx = await contract.claim();
-    await tx.wait();
-
-    document.getElementById("status").innerText =
-      "✅ 100 GRZL Claimed Successfully!";
-  }catch(err){
-    console.log(err);
-    document.getElementById("status").innerText =
-      "❌ Claim failed";
-  }
-}
-</script>
 
 </body>
 </html>
+  
